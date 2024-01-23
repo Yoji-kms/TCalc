@@ -15,7 +15,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func btnDidTap(_ sender: UIButton) {
-        print(sender.titleLabel?.text ?? "")
+        guard let title = sender.currentTitle else { return }
+        print(title)
     }
 }
 
