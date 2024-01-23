@@ -11,9 +11,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func btnDidTap(_ sender: UIButton) {
+        print(sender.titleLabel?.text ?? "")
+    }
 }
 
