@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TCalc" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TinkoffCalculator" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="="/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ua-MZ-ICn"/>
+                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zV0-xc-YDD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liU-j8-bcw">
@@ -36,7 +36,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="/"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pNP-Si-O6b"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qqJ-Tk-qY4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG9-pK-hxH">
@@ -47,7 +47,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="x"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5KT-CR-YrZ"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldy-yt-NPu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-KD-R1p">
@@ -58,7 +58,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="-"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7K-1p-MId"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Rf-iP-KzD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="290-vO-QTw">
@@ -69,7 +69,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J25-ND-qej"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cow-CT-XSd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64J-ax-V39">
@@ -80,7 +80,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="C"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRb-WG-5eM"/>
+                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ueh-xN-xMz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-eq-KTV">
@@ -91,7 +91,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="9"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8h-60-GfI"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uhg-G8-5Tk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxM-ca-Tvo">
@@ -102,7 +102,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="8"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u5s-Df-BN0"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAF-3Z-rhh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-Gb-bX8">
@@ -113,7 +113,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="7"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Spm-l2-njW"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxC-P7-aG1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slr-jp-EIa">
@@ -124,7 +124,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="6"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5O-Mu-IOy"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDl-rd-7lC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-7m-Rb4">
@@ -135,7 +135,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ntb-F9-cbl"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lYA-Ys-piK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TT-ln-2HQ">
@@ -146,7 +146,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="4"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIG-ws-S89"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2V-eC-slM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-lt-Zxv">
@@ -157,7 +157,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="3"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFO-Ad-KLB"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wk-oc-7g8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g0-HW-pWa">
@@ -168,7 +168,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="2"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lac-G2-GwX"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Op-XF-84D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYJ-Ht-Blz">
@@ -179,7 +179,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="1"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2z-3i-h4i"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OS9-Pt-UL9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="549-cL-xzW">
@@ -190,7 +190,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=","/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNZ-aJ-cG8"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7lj-Q3-OVK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQd-A3-UsJ">
@@ -201,13 +201,20 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="0"/>
                                 <connections>
-                                    <action selector="btnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ftj-dU-THm"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B9Q-yg-G4k"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" showsExpansionTextWhenTruncated="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thC-Kj-qIg">
+                                <rect key="frame" x="16" y="232.99999999999997" width="361" height="71.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="thC-Kj-qIg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0Qz-N9-8Ok"/>
                             <constraint firstItem="Biq-7m-Rb4" firstAttribute="leading" secondItem="5TT-ln-2HQ" secondAttribute="trailing" id="0x3-aN-gcc"/>
                             <constraint firstItem="Biq-7m-Rb4" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="1Vt-6l-hEn"/>
                             <constraint firstItem="hWW-Gb-bX8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1mn-N0-4qM"/>
@@ -216,6 +223,7 @@
                             <constraint firstItem="Yh2-KD-R1p" firstAttribute="leading" secondItem="Slr-jp-EIa" secondAttribute="trailing" id="3fb-Ip-hFV"/>
                             <constraint firstItem="eG9-pK-hxH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="4IG-iQ-XEP"/>
                             <constraint firstItem="290-vO-QTw" firstAttribute="bottom" secondItem="4oY-d1-DgD" secondAttribute="top" id="4mI-x7-elx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="thC-Kj-qIg" secondAttribute="trailing" constant="16" id="4tK-GO-K46"/>
                             <constraint firstItem="Slr-jp-EIa" firstAttribute="bottom" secondItem="Y5K-lt-Zxv" secondAttribute="top" id="56W-oQ-X6R"/>
                             <constraint firstItem="liU-j8-bcw" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="57U-MZ-3gv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4oY-d1-DgD" secondAttribute="bottom" id="5dE-Ou-cSO"/>
@@ -250,6 +258,7 @@
                             <constraint firstItem="iYJ-Ht-Blz" firstAttribute="bottom" secondItem="549-cL-xzW" secondAttribute="top" id="Zs1-zg-cib"/>
                             <constraint firstItem="zbj-eq-KTV" firstAttribute="bottom" secondItem="Slr-jp-EIa" secondAttribute="top" id="a1o-jQ-wad"/>
                             <constraint firstItem="iYJ-Ht-Blz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aux-Ur-uLA"/>
+                            <constraint firstItem="thC-Kj-qIg" firstAttribute="bottom" secondItem="64J-ax-V39" secondAttribute="top" constant="-20" id="cVC-wF-cfu"/>
                             <constraint firstItem="Yh2-KD-R1p" firstAttribute="bottom" secondItem="290-vO-QTw" secondAttribute="top" id="dh1-jN-H7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4oY-d1-DgD" secondAttribute="trailing" id="drg-fM-eAi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="549-cL-xzW" secondAttribute="leading" id="fTL-ha-b4F"/>
@@ -283,6 +292,9 @@
                             <constraint firstItem="iYJ-Ht-Blz" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="zrw-fF-03K"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="thC-Kj-qIg" id="3Dt-g6-lEu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
