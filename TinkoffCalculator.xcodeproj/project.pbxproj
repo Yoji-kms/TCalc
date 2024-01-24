@@ -13,9 +13,9 @@
 		F951F6FC2B60091800CA45D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F951F6FA2B60091800CA45D9 /* Main.storyboard */; };
 		F951F6FE2B60093000CA45D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F951F6FD2B60093000CA45D9 /* Assets.xcassets */; };
 		F951F7012B60093000CA45D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F951F6FF2B60093000CA45D9 /* LaunchScreen.storyboard */; };
-		F951F70C2B60093000CA45D9 /* TCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F70B2B60093000CA45D9 /* TCalcTests.swift */; };
-		F951F7162B60093000CA45D9 /* TCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7152B60093000CA45D9 /* TCalcUITests.swift */; };
-		F951F7182B60093000CA45D9 /* TCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7172B60093000CA45D9 /* TCalcUITestsLaunchTests.swift */; };
+		F951F70C2B60093000CA45D9 /* TinkoffCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F70B2B60093000CA45D9 /* TinkoffCalculatorTests.swift */; };
+		F951F7162B60093000CA45D9 /* TinkoffCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7152B60093000CA45D9 /* TinkoffCalculatorUITests.swift */; };
+		F951F7182B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7172B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,10 @@
 		F951F7002B60093000CA45D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F951F7022B60093000CA45D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F951F7072B60093000CA45D9 /* TinkoffCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F951F70B2B60093000CA45D9 /* TCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCalcTests.swift; sourceTree = "<group>"; };
+		F951F70B2B60093000CA45D9 /* TinkoffCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorTests.swift; sourceTree = "<group>"; };
 		F951F7112B60093000CA45D9 /* TinkoffCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F951F7152B60093000CA45D9 /* TCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCalcUITests.swift; sourceTree = "<group>"; };
-		F951F7172B60093000CA45D9 /* TCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F951F7152B60093000CA45D9 /* TinkoffCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITests.swift; sourceTree = "<group>"; };
+		F951F7172B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +79,9 @@
 		F951F6E82B60091800CA45D9 = {
 			isa = PBXGroup;
 			children = (
-				F951F6F32B60091800CA45D9 /* TCalc */,
-				F951F70A2B60093000CA45D9 /* TCalcTests */,
-				F951F7142B60093000CA45D9 /* TCalcUITests */,
+				F951F6F32B60091800CA45D9 /* TinkoffCalculator */,
+				F951F70A2B60093000CA45D9 /* TinkoffCalculatorTests */,
+				F951F7142B60093000CA45D9 /* TinkoffCalculatorUITests */,
 				F951F6F22B60091800CA45D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F951F6F32B60091800CA45D9 /* TCalc */ = {
+		F951F6F32B60091800CA45D9 /* TinkoffCalculator */ = {
 			isa = PBXGroup;
 			children = (
 				F951F6F42B60091800CA45D9 /* AppDelegate.swift */,
@@ -107,24 +107,24 @@
 				F951F6FF2B60093000CA45D9 /* LaunchScreen.storyboard */,
 				F951F7022B60093000CA45D9 /* Info.plist */,
 			);
-			path = TCalc;
+			path = TinkoffCalculator;
 			sourceTree = "<group>";
 		};
-		F951F70A2B60093000CA45D9 /* TCalcTests */ = {
+		F951F70A2B60093000CA45D9 /* TinkoffCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				F951F70B2B60093000CA45D9 /* TCalcTests.swift */,
+				F951F70B2B60093000CA45D9 /* TinkoffCalculatorTests.swift */,
 			);
-			path = TCalcTests;
+			path = TinkoffCalculatorTests;
 			sourceTree = "<group>";
 		};
-		F951F7142B60093000CA45D9 /* TCalcUITests */ = {
+		F951F7142B60093000CA45D9 /* TinkoffCalculatorUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F951F7152B60093000CA45D9 /* TCalcUITests.swift */,
-				F951F7172B60093000CA45D9 /* TCalcUITestsLaunchTests.swift */,
+				F951F7152B60093000CA45D9 /* TinkoffCalculatorUITests.swift */,
+				F951F7172B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift */,
 			);
-			path = TCalcUITests;
+			path = TinkoffCalculatorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F951F70C2B60093000CA45D9 /* TCalcTests.swift in Sources */,
+				F951F70C2B60093000CA45D9 /* TinkoffCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F951F7182B60093000CA45D9 /* TCalcUITestsLaunchTests.swift in Sources */,
-				F951F7162B60093000CA45D9 /* TCalcUITests.swift in Sources */,
+				F951F7182B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */,
+				F951F7162B60093000CA45D9 /* TinkoffCalculatorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

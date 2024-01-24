@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import TCalc
+@testable import TinkoffCalculator
 
 final class TCalcTests: XCTestCase {
 
