@@ -16,6 +16,7 @@
 		F951F70C2B60093000CA45D9 /* TinkoffCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F70B2B60093000CA45D9 /* TinkoffCalculatorTests.swift */; };
 		F951F7162B60093000CA45D9 /* TinkoffCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7152B60093000CA45D9 /* TinkoffCalculatorUITests.swift */; };
 		F951F7182B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7172B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift */; };
+		F951F7642B6263FA00CA45D9 /* CalculationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951F7632B6263FA00CA45D9 /* CalculationsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F951F7112B60093000CA45D9 /* TinkoffCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F951F7152B60093000CA45D9 /* TinkoffCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITests.swift; sourceTree = "<group>"; };
 		F951F7172B60093000CA45D9 /* TinkoffCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F951F7632B6263FA00CA45D9 /* CalculationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F951F6FD2B60093000CA45D9 /* Assets.xcassets */,
 				F951F6FF2B60093000CA45D9 /* LaunchScreen.storyboard */,
 				F951F7022B60093000CA45D9 /* Info.plist */,
+				F951F7632B6263FA00CA45D9 /* CalculationsListViewController.swift */,
 			);
 			path = TinkoffCalculator;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F951F7642B6263FA00CA45D9 /* CalculationsListViewController.swift in Sources */,
 				F951F6F92B60091800CA45D9 /* ViewController.swift in Sources */,
 				F951F6F52B60091800CA45D9 /* AppDelegate.swift in Sources */,
 				F951F6F72B60091800CA45D9 /* SceneDelegate.swift in Sources */,
@@ -504,7 +508,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TCalcTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TinkoffCalculatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -524,7 +528,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TCalcTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TinkoffCalculatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -543,7 +547,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TCalcUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TinkoffCalculatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -562,7 +566,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TCalcUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Yoji-kms.TinkoffCalculatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

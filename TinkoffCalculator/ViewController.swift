@@ -7,16 +7,19 @@
 
 import UIKit
 
-enum CalculationError: Error {
+fileprivate enum CalculationError: Error {
     case divideByZero
     case outOfRange
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     private let comma = ","
     private var isCalculationEnded = false
     private var calculationHistory: [CalculationHistoreItem] = []
+    private var lastCalculation: String = "NoData"
+    
+    @IBOutlet private weak var label: UILabel!
     
     private lazy var numberFormatter: NumberFormatter = {
         let numFormatter = NumberFormatter()
@@ -62,8 +65,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBOutlet private weak var label: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     @IBAction private func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
@@ -90,9 +96,11 @@ class ViewController: UIViewController {
     @IBAction private func calculateButtonPressed(_ sender: UIButton) {
         self.appendNumberFromLabelToHistory()
         do {
-            let result = try calculate()
+            let result = try self.calculate()
+            let resultString = self.numberFormatter.string(from: NSNumber(value: result))
             
-            self.label.text = numberFormatter.string(from: NSNumber(value: result))
+            self.label.text = resultString
+            self.lastCalculation = resultString ?? "NoData"
         } catch {
             switch error.self {
             case CalculationError.outOfRange:
@@ -110,6 +118,16 @@ class ViewController: UIViewController {
         calculationHistory.removeAll()
         
         self.resetLabelText()
+    }
+    
+    @IBAction func showCalculationsList(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
+        if let vc = calculationsListVC as? CalculationsListViewController {
+            vc.result = self.lastCalculation
+        }
+        
+        self.navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
     private func calculate() throws -> Double {
@@ -142,15 +160,15 @@ class ViewController: UIViewController {
     
     private func appendNumberFromLabelToHistory() {
         guard
-            let labelText = label.text,
-            let labelNum = numberFormatter.number(from: labelText)?.doubleValue
+            let labelText = self.label.text,
+            let labelNum = self.numberFormatter.number(from: labelText)?.doubleValue
         else { return }
         
         self.calculationHistory.append(.number(labelNum))
     }
     
     private func resetLabelText() {
-        label.text = "0"
+        self.label.text = "0"
     }
 }
 
