@@ -13,8 +13,8 @@ fileprivate enum CalculationError: Error {
 }
 
 final class ViewController: UIViewController {
-    
     private let comma = ","
+    private let error = "Ошибка"
     private var isCalculationEnded = false
     private var calculationHistory: [CalculationHistoreItem] = []
     private var lastCalculation: String = "NoData"
@@ -60,6 +60,15 @@ final class ViewController: UIViewController {
     enum CalculationHistoreItem {
         case number(Double)
         case operation(Operation)
+        
+        func rawValue() -> String {
+            switch self {
+            case .number(_):
+                return "number"
+            case .operation(_):
+                return "operation"
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -78,7 +87,11 @@ final class ViewController: UIViewController {
             return
         }
         
-        if self.label.text == "0" || self.isCalculationEnded {
+        if buttonText == self.comma && self.isCalculationEnded {
+            self.resetLabelText()
+            self.label.text?.append(buttonText)
+            self.isCalculationEnded = false
+        } else if self.label.text == "0" && buttonText != self.comma || self.isCalculationEnded {
             self.label.text = buttonText
             self.isCalculationEnded = false
         } else {
@@ -87,7 +100,11 @@ final class ViewController: UIViewController {
     }
     
     @IBAction private func operationButtonPressed(_ sender: UIButton) {
-        self.appendNumberFromLabelToHistory()
+        if case .operation(_) = self.calculationHistory.last {
+            self.calculationHistory.removeLast()
+        } else {
+            self.appendNumberFromLabelToHistory()
+        }
         self.appendOperationFromBtnToHistory(button: sender)
         
         self.resetLabelText()
@@ -97,6 +114,7 @@ final class ViewController: UIViewController {
         self.appendNumberFromLabelToHistory()
         do {
             let result = try self.calculate()
+            
             let resultString = self.numberFormatter.string(from: NSNumber(value: result))
             
             self.label.text = resultString
@@ -104,9 +122,10 @@ final class ViewController: UIViewController {
         } catch {
             switch error.self {
             case CalculationError.outOfRange:
-                label.text = "Число за пределами вычислений"
+                self.label.text = "Число за пределами вычислений"
             default:
-                label.text = "Ошибка"
+                self.label.text = self.error
+                self.lastCalculation = self.error
             }
         }
         
