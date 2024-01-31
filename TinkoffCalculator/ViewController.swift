@@ -7,19 +7,62 @@
 
 import UIKit
 
+//    MARK: Enumirations
 fileprivate enum CalculationError: Error {
     case divideByZero
     case outOfRange
 }
 
+enum CalculationHistoryItem {
+    case number(Double)
+    case operation(Operation)
+    
+    func rawValue() -> String {
+        switch self {
+        case .number(_):
+            return "number"
+        case .operation(_):
+            return "operation"
+        }
+    }
+}
+
+enum Operation: String {
+    case add = "+"
+    case subtract = "-"
+    case multiply = "x"
+    case divide = "/"
+    
+    func calculate(_ number1: Double, _ number2: Double) throws -> Double {
+        try number1.checkRange()
+        try number2.checkRange()
+        
+        switch self {
+        case .add:
+            return number1 + number2
+        case .subtract:
+            return number1 - number2
+        case .multiply:
+            return number1 * number2
+        case .divide:
+            if number2 == 0 {
+                throw CalculationError.divideByZero
+            }
+            return number1 / number2
+        }
+    }
+}
+
 final class ViewController: UIViewController {
+//    MARK: Variables
     private let comma = ","
     private let error = "Ошибка"
     private var isCalculationEnded = false
-    private var calculationHistory: [CalculationHistoreItem] = []
-    private var lastCalculation: String = "NoData"
+    private var calculationHistory: [CalculationHistoryItem] = []
+    private var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var historyButton: UIButton!
     
     private lazy var numberFormatter: NumberFormatter = {
         let numFormatter = NumberFormatter()
@@ -31,48 +74,10 @@ final class ViewController: UIViewController {
         return numFormatter
     }()
     
-    enum Operation: String {
-        case add = "+"
-        case subtract = "-"
-        case multiply = "x"
-        case divide = "/"
-        
-        func calculate(_ number1: Double, _ number2: Double) throws -> Double {
-            try number1.checkRange()
-            try number2.checkRange()
-            
-            switch self {
-            case .add:
-                return number1 + number2
-            case .subtract:
-                return number1 - number2
-            case .multiply:
-                return number1 * number2
-            case .divide:
-                if number2 == 0 {
-                    throw CalculationError.divideByZero
-                }
-                return number1 / number2
-            }
-        }
-    }
-    
-    enum CalculationHistoreItem {
-        case number(Double)
-        case operation(Operation)
-        
-        func rawValue() -> String {
-            switch self {
-            case .number(_):
-                return "number"
-            case .operation(_):
-                return "operation"
-            }
-        }
-    }
-    
+//    MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.historyButton.accessibilityIdentifier = "historyButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +85,7 @@ final class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+//    MARK: Listeners
     @IBAction private func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
         
@@ -118,14 +124,13 @@ final class ViewController: UIViewController {
             let resultString = self.numberFormatter.string(from: NSNumber(value: result))
             
             self.label.text = resultString
-            self.lastCalculation = resultString ?? "NoData"
+            self.calculations.append((calculationHistory, result))
         } catch {
             switch error.self {
             case CalculationError.outOfRange:
                 self.label.text = "Число за пределами вычислений"
             default:
                 self.label.text = self.error
-                self.lastCalculation = self.error
             }
         }
         
@@ -143,12 +148,13 @@ final class ViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
         if let vc = calculationsListVC as? CalculationsListViewController {
-            vc.result = self.lastCalculation
+            vc.calculations = self.calculations
         }
         
         self.navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
+//    MARK: Functions
     private func calculate() throws -> Double {
         guard case .number(let firstNumber) = calculationHistory[0] else { return 0 }
         

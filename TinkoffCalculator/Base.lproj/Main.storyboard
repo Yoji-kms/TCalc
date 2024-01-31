@@ -311,6 +311,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Калькулятор" id="UiG-fb-fLo"/>
                     <connections>
+                        <outlet property="historyButton" destination="UYR-wU-Cjl" id="AT5-DQ-KOq"/>
                         <outlet property="label" destination="thC-Kj-qIg" id="3Dt-g6-lEu"/>
                     </connections>
                 </viewController>
@@ -326,24 +327,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pw-Mf-2iI">
-                                <rect key="frame" x="191.33333333333334" y="415.66666666666669" width="10.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ueq-2a-Awe">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eJ0-Yf-bz9"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="4pw-Mf-2iI" firstAttribute="centerY" secondItem="djb-ad-WzM" secondAttribute="centerY" id="8Yc-cT-ixF"/>
-                            <constraint firstItem="4pw-Mf-2iI" firstAttribute="centerX" secondItem="djb-ad-WzM" secondAttribute="centerX" id="RXd-jO-D1q"/>
-                            <constraint firstItem="4pw-Mf-2iI" firstAttribute="centerY" secondItem="djb-ad-WzM" secondAttribute="centerY" id="onU-gb-9z9"/>
+                            <constraint firstItem="Ueq-2a-Awe" firstAttribute="leading" secondItem="eJ0-Yf-bz9" secondAttribute="leading" id="Keu-35-ph9"/>
+                            <constraint firstItem="eJ0-Yf-bz9" firstAttribute="bottom" secondItem="Ueq-2a-Awe" secondAttribute="bottom" id="OQS-cL-l6L"/>
+                            <constraint firstItem="eJ0-Yf-bz9" firstAttribute="trailing" secondItem="Ueq-2a-Awe" secondAttribute="trailing" id="S1Y-QE-Msx"/>
+                            <constraint firstItem="Ueq-2a-Awe" firstAttribute="top" secondItem="eJ0-Yf-bz9" secondAttribute="top" id="Wog-qc-x9w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Прошлые вычисления" id="vhU-3b-QBN"/>
                     <connections>
-                        <outlet property="calculationLabel" destination="4pw-Mf-2iI" id="D7o-1A-Hg4"/>
+                        <outlet property="tableView" destination="Ueq-2a-Awe" id="B3b-XR-8N2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ew8-2G-DY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
