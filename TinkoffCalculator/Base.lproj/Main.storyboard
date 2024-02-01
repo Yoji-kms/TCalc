@@ -220,7 +220,7 @@
                                     <imageReference key="image" image="clock" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="showCalculationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bh1-fa-N2g"/>
+                                    <action selector="showCalculationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DoJ-eK-o58"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -311,7 +311,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Калькулятор" id="UiG-fb-fLo"/>
                     <connections>
-                        <outlet property="historyButton" destination="UYR-wU-Cjl" id="AT5-DQ-KOq"/>
                         <outlet property="label" destination="thC-Kj-qIg" id="3Dt-g6-lEu"/>
                     </connections>
                 </viewController>

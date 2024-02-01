@@ -62,7 +62,6 @@ final class ViewController: UIViewController {
     private var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     
     @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var historyButton: UIButton!
     
     private lazy var numberFormatter: NumberFormatter = {
         let numFormatter = NumberFormatter()
@@ -77,7 +76,7 @@ final class ViewController: UIViewController {
 //    MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.historyButton.accessibilityIdentifier = "historyButton"
+//        self.historyButton.accessibilityIdentifier = "historyButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {

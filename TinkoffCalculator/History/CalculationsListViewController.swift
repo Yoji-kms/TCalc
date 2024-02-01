@@ -8,6 +8,7 @@
 import UIKit
 
 final class CalculationsListViewController: UIViewController {
+//    MARK: Variables
     @IBOutlet weak var tableView: UITableView!
     var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     private lazy var headerLabel: UILabel = {
@@ -25,7 +26,7 @@ final class CalculationsListViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             self.headerLabel.topAnchor.constraint(equalTo: headertView.topAnchor),
-            self.headerLabel.bottomAnchor.constraint(equalTo: headertView.bottomAnchor),
+            self.headerLabel.bottomAnchor.constraint(equalTo: headertView.bottomAnchor, constant: -8),
             self.headerLabel.leadingAnchor.constraint(equalTo: headertView.leadingAnchor, constant: 16),
             self.headerLabel.trailingAnchor.constraint(equalTo: headertView.trailingAnchor)
         ])
@@ -37,6 +38,7 @@ final class CalculationsListViewController: UIViewController {
         return headertView
     }()
     
+//    MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +58,7 @@ final class CalculationsListViewController: UIViewController {
     }
 }
 
+//  MARK: Extensions
 extension CalculationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         90
