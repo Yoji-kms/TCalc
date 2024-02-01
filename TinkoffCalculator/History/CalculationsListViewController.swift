@@ -10,29 +10,8 @@ import UIKit
 final class CalculationsListViewController: UIViewController {
 //    MARK: Variables
     @IBOutlet weak var tableView: UITableView!
-    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
-    private lazy var headerLabel: UILabel = {
-        let lbl = UILabel()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        let date = formatter.string(from: Date())
-        lbl.text = date
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    private lazy var tableHeaderView: UIView = {
-        let headertView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30))
-        headertView.addSubview(self.headerLabel)
-        
-        NSLayoutConstraint.activate([
-            self.headerLabel.topAnchor.constraint(equalTo: headertView.topAnchor),
-            self.headerLabel.bottomAnchor.constraint(equalTo: headertView.bottomAnchor, constant: -8),
-            self.headerLabel.leadingAnchor.constraint(equalTo: headertView.leadingAnchor, constant: 16),
-            self.headerLabel.trailingAnchor.constraint(equalTo: headertView.trailingAnchor)
-        ])
-                
-        return headertView
-    }()
+    var calculations: [Calculation] = []
+    
     private lazy var tableFooterView: UIView = {
         let headertView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 1))
         return headertView
@@ -48,8 +27,12 @@ final class CalculationsListViewController: UIViewController {
         self.tableView.backgroundColor = .systemGray5
         self.tableView.tableFooterView = self.tableFooterView
         
-        let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
+        let cellNib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "HistoryTableViewCell")
+        tableView.register(
+            HistoryTableViewHeader.self,
+            forHeaderFooterViewReuseIdentifier: "HistoryTableViewHeader"
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,12 +48,26 @@ extension CalculationsListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        self.tableHeaderView
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryTableViewHeader") as? HistoryTableViewHeader else {
+            return nil
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let date = calculations[section].date
+        let formattedDate = formatter.string(from: date)
+        header.configure(with: formattedDate)
+        
+        return header
     }
 }
 
 extension CalculationsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         self.calculations.count
     }
     
@@ -79,7 +76,7 @@ extension CalculationsListViewController: UITableViewDataSource {
             let cell = UITableViewCell()
             return cell
         }
-        let historyItem = calculations[indexPath.row]
+        let historyItem = calculations[indexPath.section]
         cell.configure(with: historyItem.expression.toString(), result: String(historyItem.result))
         
         return cell

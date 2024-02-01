@@ -59,7 +59,8 @@ final class ViewController: UIViewController {
     private let error = "Ошибка"
     private var isCalculationEnded = false
     private var calculationHistory: [CalculationHistoryItem] = []
-    private var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
+    private var calculations: [Calculation] = []
+    private let calculationHistoryStorage = CalculationHistoryStorage()
     
     @IBOutlet private weak var label: UILabel!
     
@@ -76,7 +77,7 @@ final class ViewController: UIViewController {
 //    MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.historyButton.accessibilityIdentifier = "historyButton"
+        self.calculations = self.calculationHistoryStorage.loadHistory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,7 +124,9 @@ final class ViewController: UIViewController {
             let resultString = self.numberFormatter.string(from: NSNumber(value: result))
             
             self.label.text = resultString
-            self.calculations.append((calculationHistory, result))
+            let newCalculation = Calculation(expression: calculationHistory, result: result, date: Date())
+            self.calculations.append(newCalculation)
+            self.calculationHistoryStorage.setHistory(calculation: self.calculations)
         } catch {
             switch error.self {
             case CalculationError.outOfRange:
